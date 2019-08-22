@@ -24,18 +24,18 @@ public class CustomerTest {
 
        // System.out.println(customerMap);
         System.out.println(customerMap.keySet());
-        showCustomer(customerMap);
+        System.out.println(showCustomer(customerMap));
     }
 
-    private static void showCustomer (Map<Integer, Custromer> stringMap){
+    private static String showCustomer (Map<Integer, Custromer> stringMap){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj id uzytkownika");
         int id = scanner.nextInt();
         scanner.nextLine();
         if (stringMap.containsKey(id))
-            System.out.println(stringMap.get(id));
+            return stringMap.get(id).toString();
         else
-            System.out.println("Brak takiego uzytkownika");
+            return "Brak takiego uzytkownika";
     }
 
     private static Map<Integer, Custromer> getFromFile (String s ) throws FileNotFoundException {
